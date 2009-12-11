@@ -3,7 +3,11 @@ Manifest.txt
 PostInstall.txt
 README.rdoc
 Rakefile
+active_tunes.tmproj
 lib/active_tunes.rb
+lib/active_tunes/album.rb
+lib/active_tunes/tag.rb
+lib/active_tunes/track.rb
 script/console
 script/destroy
 script/generate

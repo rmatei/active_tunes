@@ -4,30 +4,42 @@
 
 == DESCRIPTION:
 
-Provides an ActiveRecord-style interface to your iTunes library on a Mac. Useful for any custom tagging tasks and general scripting.
+Automated ID3 tagging for iTunes on a Mac, based on AppleScript. Alter for your needs. Features intelligent genre tagging.
 
-== FEATURES/PROBLEMS:
+== FEATURES:
 
-* FIX (list of features or problems)
+* Get tracks and albums from library and edit any ID3 field, ad-hoc
+* Script your tagging preferences and easily apply them to newly imported tracks
+* Gets genre information from Last.fm API
+  * Can use the grouping field to fill in most popular Last.fm tags, which might look like "britpop indie madchester rock alternative british indie-rock alternative-rock manchester 80s". This allows you to search across your library for stuff like "alt-country" or "minimal-techno" - a much more powerful and automated system for genre metadata
 
-== SYNOPSIS:
+== INSTALL:
 
-  FIX (code sample of usage)
+* sudo gem install active_tunes --source "http://gemcutter.org"
+
+== AD-HOC TAGGING IN IRB:
+
+  require 'active_tunes'
+  album = its.first.full_album   # its gets an array of selected tracks in iTunes
+  album.compilation = false
+  album.number_tracks
+  
+== STANDARDIZE YOUR TAGGING:
+
+* edit tag function in track.rb and album.rb
+* [need to bundle shell script to launch this process]
 
 == REQUIREMENTS:
 
 * Mac OS X
 * rb-appscript
-
-== INSTALL:
-
-* sudo gem install active_tunes
+* active_mac
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 FIXME full name
+Copyleft (c) 2009 Robert Matei
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
